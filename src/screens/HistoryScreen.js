@@ -10,9 +10,11 @@ const HistoryScreen = ({ navigation }) => {
     navigation.navigate('Main');
   };
 
+  const finishedTasks = tasks.filter((task) => task.completed);
+
   return (
     <View>
-        {tasks.length === 0 ? (
+        {finishedTasks.length === 0 ? (
         <Text style={styles.text}>Nenhuma tarefa concluida</Text>
         ) : (
             <FlatList
